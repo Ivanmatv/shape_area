@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shape_area"
+version = "0.1.0"
+description = "A library for calculating areas of shapes"
+authors = [{name = "Ivan Matveev", email = "matveevim95@gmail.com"}]
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = []  # Убрали math и abc
+
+[project.urls]
+Homepage = "https://github.com/Ivanmatv/shape_area.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["geometry*"]  # Изменили с shapes* на geometry*
+
+[tool.pytest.ini_options]
+pythonpath = ["."]  # Изменили с src на .
+testpaths = ["tests"]
